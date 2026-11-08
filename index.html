@@ -1,0 +1,2127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f7">
+<title>For Sri Sakhi Ji ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #e9a1ba;
+    --deep: #c65e86;
+    --rose: #f8d9e4;
+    --cream: #fffaf4;
+    --text: #755463;
+    --gold: #e9bd7b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #fff3f7;
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--deep);
+    outline-offset: 4px;
+}
+
+/* =========================
+   COMMON PAGE DESIGN
+========================= */
+
+.page {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 25px;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffe4ed 0, transparent 30%),
+        radial-gradient(circle at 90% 90%, #eee4ff 0, transparent 32%),
+        linear-gradient(135deg, #fffaf5, #fff0f6, #f9f1ff);
+}
+
+.page.active {
+    display: flex;
+    animation: pageReveal .85s ease both;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    position: relative;
+    z-index: 2;
+    width: min(690px, 100%);
+    padding: 38px;
+
+    border: 1px solid rgba(255,255,255,.95);
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 20px 70px rgba(190,110,145,.13),
+        inset 0 0 25px rgba(255,255,255,.55);
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    color: var(--deep);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    color: var(--deep);
+}
+
+.script {
+    font-family: 'Dancing Script', cursive;
+    color: #c9799a;
+}
+
+.subtitle {
+    margin-top: 13px;
+    font-size: .98rem;
+    line-height: 1.8;
+}
+
+.small-label {
+    font-size: .7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #b98298;
+    margin-bottom: 12px;
+}
+
+.primary-btn {
+    padding: 13px 25px;
+    border-radius: 40px;
+    color: white;
+    font-size: .92rem;
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #eaa3bd, #cf7097);
+    box-shadow: 0 7px 22px rgba(201,105,145,.22);
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(201,105,145,.3);
+}
+
+.secondary-btn {
+    padding: 12px 21px;
+    border-radius: 40px;
+    color: #bd6487;
+    font-size: .88rem;
+    font-weight: 600;
+
+    background: #fff1f6;
+    border: 1px solid #f2cbd9;
+    transition: .3s;
+}
+
+.secondary-btn:hover {
+    background: #ffe4ed;
+    transform: translateY(-2px);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    margin-top: 22px;
+}
+
+/* =========================
+   DECORATIVE BACKGROUND
+========================= */
+
+.decoration {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .7;
+    animation: floatDecor 6s ease-in-out infinite;
+}
+
+.decoration.d1 {
+    top: 7%;
+    left: 6%;
+    font-size: 30px;
+}
+
+.decoration.d2 {
+    top: 15%;
+    right: 7%;
+    font-size: 25px;
+    animation-delay: 1s;
+}
+
+.decoration.d3 {
+    bottom: 10%;
+    left: 8%;
+    font-size: 26px;
+    animation-delay: 2s;
+}
+
+.decoration.d4 {
+    bottom: 9%;
+    right: 7%;
+    font-size: 32px;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatDecor {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-17px) rotate(7deg);
+    }
+}
+
+/* MUSIC BUTTON */
+
+.music-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 30;
+
+    padding: 11px 17px;
+    border-radius: 40px;
+
+    color: #bc6286;
+    background: rgba(255,255,255,.94);
+    border: 1px solid #f2cada;
+    box-shadow: 0 5px 18px rgba(150,80,110,.13);
+    font-size: .84rem;
+}
+
+/* =========================
+   PAGE 1 - TEDDY SURPRISE
+========================= */
+
+.welcome-card {
+    overflow: hidden;
+}
+
+.welcome-card::before,
+.welcome-card::after {
+    content: "✧";
+    position: absolute;
+    color: #e8bd7b;
+    font-size: 28px;
+    animation: twinkle 2s infinite;
+}
+
+.welcome-card::before {
+    top: 20px;
+    left: 22px;
+}
+
+.welcome-card::after {
+    bottom: 20px;
+    right: 22px;
+    animation-delay: .7s;
+}
+
+@keyframes twinkle {
+    0%,100% {
+        opacity: .3;
+        transform: scale(.7) rotate(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(40deg);
+    }
+}
+
+/* Teddy walking stage */
+
+.teddy-stage {
+    width: 100%;
+    height: clamp(135px, 22vw, 190px);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+
+.teddy {
+    position: absolute;
+    left: -180px;
+    bottom: 0;
+
+    font-size: clamp(95px, 17vw, 145px);
+    line-height: 1.2;
+    white-space: nowrap;
+
+    filter: drop-shadow(0 8px 6px rgba(140,90,110,.12));
+
+    animation: teddyWalk 3.2s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+@keyframes teddyWalk {
+    0% {
+        left: -180px;
+        transform: translateY(0) rotate(-5deg);
+    }
+    15% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+    30% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    45% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+    60% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    80% {
+        left: 38%;
+        transform: translateY(-7px) rotate(2deg);
+    }
+    100% {
+        left: 38%;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.teddy-sign {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: fit-content;
+    max-width: 75%;
+    margin: auto;
+
+    padding: 9px 17px;
+    border-radius: 14px;
+
+    background: white;
+    border: 1px solid #f2d4df;
+    box-shadow: 0 5px 15px rgba(160,90,120,.1);
+
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(17px, 3vw, 23px);
+    color: var(--deep);
+
+    opacity: 0;
+    animation: signAppear 1s ease 2.6s forwards;
+}
+
+@keyframes signAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.welcome-title {
+    opacity: 0;
+    animation: textAppear 1s ease 2.9s forwards;
+}
+
+.welcome-subtitle {
+    opacity: 0;
+    animation: textAppear 1s ease 3.2s forwards;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(17px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.little-details {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    color: #bd8ba0;
+    font-size: .78rem;
+}
+
+.cake {
+    font-size: clamp(66px, 12vw, 90px);
+    margin: 12px 0 5px;
+    animation: cakeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes cakeGlow {
+    0%,100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    50% {
+        transform: scale(1.07);
+        filter: drop-shadow(0 0 14px #f5c0d1);
+    }
+}
+
+.candle-message {
+    min-height: 25px;
+    color: #c16b8d;
+    font-size: .9rem;
+    margin-top: 7px;
+}
+
+/* =========================
+   PAGE 2 - LETTER
+========================= */
+
+.letter-card {
+    max-width: 750px;
+    padding: 35px;
+    text-align: left;
+}
+
+.letter-title {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.letter-subtitle {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #d18aa5;
+    margin-bottom: 18px;
+}
+
+.letter-scroll {
+    font-family: 'Lora', serif;
+    height: min(56vh, 490px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 7px 15px 12px 4px;
+
+    font-size: .97rem;
+    line-height: 1.95;
+
+    scroll-behavior: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e7a9bf #fff2f6;
+
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.letter-scroll p {
+    margin-bottom: 18px;
+}
+
+.letter-greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: var(--deep);
+}
+
+.letter-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: var(--deep);
+}
+
+.scroll-hint {
+    text-align: center;
+    font-size: .75rem;
+    color: #b98a9d;
+    margin-top: 10px;
+}
+
+/* 11:11 MAGIC */
+
+.magic-moment {
+    position: relative;
+    text-align: center;
+
+    padding: 28px 15px;
+    margin: 28px 0;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #fff0f6, #fff7e9, #f2ebff);
+    border: 1px solid #f4d5e1;
+
+    opacity: .35;
+    transform: scale(.94);
+
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.magic-moment.revealed {
+    opacity: 1;
+    transform: scale(1);
+    animation: magicReveal 1.3s ease both;
+}
+
+@keyframes magicReveal {
+    0% {
+        transform: scale(.85);
+        filter: blur(4px);
+    }
+    60% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.magic-small {
+    color: #b87a96;
+    font-size: .82rem;
+    letter-spacing: 1px;
+}
+
+.magic-numbers {
+    display: block;
+    margin: 12px 0;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 9vw, 4.3rem);
+    font-weight: 700;
+
+    color: #d06e96;
+    text-shadow: 0 0 20px rgba(230,150,185,.5);
+}
+
+.magic-moment.revealed .magic-numbers {
+    animation: numberGlow 2s ease-in-out infinite;
+}
+
+@keyframes numberGlow {
+    0%,100% {
+        text-shadow: 0 0 8px #f2c6d7;
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 28px #e9a5c2, 0 0 40px #f5d8a4;
+        transform: scale(1.06);
+    }
+}
+
+.magic-caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;
+    color: #bd7392;
+}
+
+.magic-star {
+    position: absolute;
+    color: #dba75f;
+    pointer-events: none;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* Falling flowers */
+
+.falling-item {
+    position: fixed;
+    top: -45px;
+    z-index: 5;
+    pointer-events: none;
+    animation: fallDown linear forwards;
+    opacity: .85;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translate3d(0,-20px,0) rotate(0);
+        opacity: .9;
+    }
+    100% {
+        transform: translate3d(30px,110vh,0) rotate(360deg);
+        opacity: .05;
+    }
+}
+
+/* =========================
+   PAGE 3 - PHOTO MAGAZINE
+========================= */
+
+.gallery-card {
+    max-width: 950px;
+    padding: 32px;
+}
+
+.gallery-title {
+    margin-bottom: 7px;
+}
+
+.gallery-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #c7819d;
+    margin-bottom: 14px;
+}
+
+.gallery-counter {
+    color: #ae8798;
+    font-size: .82rem;
+    margin-bottom: 15px;
+}
+
+.photo-frame {
+    width: min(100%, 650px);
+    height: min(52vh, 450px);
+    min-height: 210px;
+
+    padding: 10px;
+    margin: auto;
+
+    border-radius: 22px;
+    background: white;
+
+    box-shadow: 0 10px 35px rgba(150,90,120,.14);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 13px;
+
+    opacity: 1;
+    transform: scale(1);
+
+    transition: opacity .55s ease, transform .55s ease;
+}
+
+.photo-frame img.changing {
+    opacity: 0;
+    transform: scale(.96);
+}
+
+.photo-caption {
+    min-height: 30px;
+    margin-top: 14px;
+
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #c76c91;
+}
+
+.photo-error {
+    display: none;
+    color: #bb718e;
+    font-size: .85rem;
+    padding: 15px;
+}
+
+/* =========================
+   PAGE 4 - FINAL SURPRISE
+========================= */
+
+.final-card {
+    max-width: 700px;
+    overflow: hidden;
+}
+
+.final-heart {
+    font-size: 65px;
+    margin: 6px 0 13px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    25% { transform: scale(1.12); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.1); }
+}
+
+.final-message {
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-top: 15px;
+}
+
+.final-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: var(--deep);
+    margin-top: 18px;
+}
+
+.wish-button {
+    margin-top: 20px;
+}
+
+.secret-wish {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 18px;
+
+    background: linear-gradient(135deg, #fff0f6, #fff7e9);
+    border: 1px solid #f2d4df;
+
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: #c65e86;
+
+    animation: textAppear .8s ease both;
+}
+
+.secret-wish.show {
+    display: block;
+}
+
+.fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Floating hearts */
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 4;
+    pointer-events: none;
+    animation: heartRise linear forwards;
+}
+
+@keyframes heartRise {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    15% { opacity: .9; }
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 13px;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        padding: 23px 16px;
+        border-radius: 23px;
+        margin: auto 0;
+    }
+
+    .welcome-card {
+        padding: 22px 14px;
+    }
+
+    .teddy-stage {
+        height: 125px;
+    }
+
+    .teddy {
+        font-size: 98px;
+    }
+
+    .teddy-sign {
+        font-size: 18px;
+        padding: 7px 10px;
+    }
+
+    .subtitle {
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+
+    .cake {
+        font-size: 68px;
+    }
+
+    .little-details {
+        gap: 9px;
+        font-size: .7rem;
+    }
+
+    .button-row {
+        gap: 9px;
+        margin-top: 17px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 11px 15px;
+        font-size: .84rem;
+    }
+
+    .letter-card {
+        padding: 21px 14px;
+    }
+
+    .letter-scroll {
+        height: min(56vh, 490px);
+        font-size: .9rem;
+        line-height: 1.8;
+        padding-right: 9px;
+    }
+
+    .letter-greeting {
+        font-size: 26px;
+    }
+
+    .magic-moment {
+        padding: 22px 9px;
+    }
+
+    .magic-numbers {
+        font-size: 2.8rem;
+    }
+
+    .gallery-card {
+        padding: 22px 13px;
+    }
+
+    .photo-frame {
+        height: min(47vh, 400px);
+        min-height: 190px;
+        padding: 7px;
+    }
+
+    .photo-caption {
+        font-size: 21px;
+    }
+
+    .final-heart {
+        font-size: 49px;
+    }
+
+    .final-message {
+        font-size: .91rem;
+        line-height: 1.75;
+    }
+
+    .music-btn {
+        right: 10px;
+        bottom: 10px;
+        padding: 9px 12px;
+        font-size: .77rem;
+    }
+
+    .decoration.d1 { left: 3%; top: 3%; }
+    .decoration.d2 { right: 3%; top: 9%; }
+    .decoration.d3 { left: 3%; bottom: 4%; }
+    .decoration.d4 { right: 3%; bottom: 4%; }
+}
+
+@media (max-width: 380px) {
+
+    .page {
+        padding: 9px;
+    }
+
+    .card {
+        padding: 18px 12px;
+    }
+
+    .teddy-stage {
+        height: 110px;
+    }
+
+    .teddy {
+        font-size: 83px;
+    }
+
+    .letter-scroll {
+        height: 53vh;
+        font-size: .86rem;
+    }
+
+    .photo-frame {
+        height: 42vh;
+        min-height: 175px;
+    }
+
+    .button-row {
+        gap: 7px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 10px 13px;
+        font-size: .8rem;
+    }
+}
+
+@media (max-height: 700px) and (max-width: 600px) {
+
+    .page {
+        padding-top: 8px;
+        padding-bottom: 55px;
+    }
+
+    .teddy-stage {
+        height: 90px;
+    }
+
+    .teddy {
+        font-size: 72px;
+    }
+
+    .cake {
+        font-size: 53px;
+        margin: 5px 0;
+    }
+
+    .letter-scroll {
+        height: 48vh;
+    }
+
+    .photo-frame {
+        height: 37vh;
+        min-height: 150px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background decorations -->
+
+<div class="decoration d1">♡</div>
+<div class="decoration d2">🌸</div>
+<div class="decoration d3">✧</div>
+<div class="decoration d4">♡</div>
+
+<!-- Music -->
+
+<audio id="birthdayMusic" src="song.mp3" loop preload="auto"></audio>
+
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">
+    ♫ Play Music
+</button>
+
+
+<!-- ==================================
+     PAGE 1: THE TEDDY SURPRISE
+================================== -->
+
+<section class="page active" id="page1">
+
+    <div class="card welcome-card">
+
+        <div class="small-label">
+            A little surprise for someone special
+        </div>
+
+        <div class="teddy-stage">
+
+            <div class="teddy-sign">
+                Happy Birthday! ♡
+            </div>
+
+            <div class="teddy" id="teddy">
+                🧸
+            </div>
+
+        </div>
+
+        <h1 class="welcome-title">
+            Happy Birthday!
+        </h1>
+
+        <h2 class="welcome-title">
+            Dear Sri Sakhi Ji ♡
+        </h2>
+
+        <p class="subtitle welcome-subtitle">
+            Today the world feels a little more beautiful,
+            because someone as wonderful as you was born. 💗
+        </p>
+
+        <div class="little-details">
+            <span>🌷 Made with love</span>
+            <span>♡ Just for you</span>
+            <span>✨ A special day</span>
+        </div>
+
+        <div class="cake" id="cake">🎂</div>
+
+        <p class="candle-message" id="candleMessage">
+            Close your eyes, make a wish, and blow out your candles!
+        </p>
+
+        <div class="button-row">
+
+            <button class="secondary-btn" onclick="blowCandles()">
+                🕯️ Blow Candles
+            </button>
+
+            <button class="primary-btn" onclick="cutCake()">
+                🎂 Cut the Cake
+            </button>
+
+        </div>
+
+        <div id="page1Next" style="display:none; margin-top:22px;">
+
+            <p class="script" style="font-size:23px; margin-bottom:12px;">
+                Your little surprise is waiting...
+            </p>
+
+            <button class="primary-btn" onclick="goToPage(2)">
+                Open Your Letter ♡ →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PAGE 2: THE PERSONAL LETTER
+================================== -->
+
+<section class="page" id="page2">
+
+    <div class="card letter-card">
+
+        <h2 class="letter-title">
+            A Little Letter For You
+        </h2>
+
+        <div class="letter-subtitle">
+            From my heart to yours ♡
+        </div>
+
+        <div class="letter-scroll" id="letterScroll">
+
+            <p class="letter-greeting">Hiiiii! ❤️</p>
+
+            <p>
+                Many, many happy returns of the day to my dearest Sri Sakhi Ji!
+            </p>
+
+            <p>
+                Today is not just your birthday; it's a day to celebrate YOU.
+                A day to celebrate the beautiful person you are and the happiness
+                you bring into the lives of people around you.
+            </p>
+
+            <p>
+                You know, the whole world believes in the magic of 11:11,
+                making wishes and hoping they come true. But there's something
+                even more special about you. God made you on the 11th of
+                November, making the 11 × 11 magic a part of your very existence.
+                Maybe the universe has its own way of reminding us how special you are.
+            </p>
+
+            <div class="magic-moment" id="magicMoment">
+
+                <div class="magic-small">
+                    A LITTLE MAGIC WRITTEN IN THE UNIVERSE
+                </div>
+
+                <strong class="magic-numbers">
+                    11 : 11
+                </strong>
+
+                <div class="magic-caption">
+                    11th November — your special day ♡
+                </div>
+
+                <div class="magic-small" style="margin-top:10px;">
+                    11 × 11 = 121
+                </div>
+
+            </div>
+
+            <p>
+                I am genuinely grateful to have you in my life. You are a very
+                special person to me, and your birthday will never be just an
+                ordinary day. It's the day God decided that this world needed
+                someone like you, and sent you here to make it a little more beautiful.
+            </p>
+
+            <p>
+                May this birthday bring you endless happiness, good health,
+                peace, wellness, success, and all the good luck you deserve.
+                May every wish hidden in your heart find its way towards becoming reality.
+            </p>
+
+            <p>
+                I always pray for one thing: to see that beautiful smile on your face.
+                Your smile is truly precious to me, and I hope life gives you
+                a million reasons to keep smiling.
+            </p>
+
+            <p>
+                I always wish to laugh with you, create beautiful memories together,
+                and have countless more conversations that make us forget about time.
+                I will always cherish our long conversations and all those little
+                moments we have shared. Those memories are among the most beautiful
+                parts of my life.
+            </p>
+
+            <p>
+                When you came into my life, you made it brighter, happier,
+                and more beautiful in ways you might not even realise.
+            </p>
+
+            <p>
+                Thank you so much for coming into my life and being YOU.
+            </p>
+
+            <p>
+                Once again, happiest birthday, Sri Sakhi Ji!
+                Keep smiling, keep shining, and always stay the wonderful person you are.
+            </p>
+
+            <p>
+                You deserve all the happiness in this universe.
+            </p>
+
+            <p class="letter-sign">
+                With lots of love and warm wishes. ♡
+            </p>
+
+        </div>
+
+        <div class="scroll-hint" id="scrollHint">
+            Take your time... a little surprise is hidden in this letter ♡
+        </div>
+
+        <div class="button-row">
+
+            <button class="secondary-btn" onclick="toggleLetterScroll()">
+                Ⅱ Pause / Resume
+            </button>
+
+            <button class="primary-btn" onclick="goToPage(3)">
+                Our Beautiful Memories 📸 →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PAGE 3: PHOTO MAGAZINE
+================================== -->
+
+<section class="page" id="page3">
+
+    <div class="card gallery-card">
+
+        <div class="small-label">
+            A little collection of happiness
+        </div>
+
+        <h2 class="gallery-title">
+            Happy Birthday dear Sri Sakhi Ji ♡
+        </h2>
+
+        <div class="gallery-subtitle">
+            Every picture holds a little memory
+        </div>
+
+        <div class="gallery-counter" id="photoCounter">
+            Memory 1 of 20
+        </div>
+
+        <div class="photo-frame">
+
+            <img
+                id="galleryPhoto"
+                src="photo1.jpg"
+                alt="A special memory"
+            >
+
+            <div class="photo-error" id="photoError">
+                Photo not found. Please check the photo filename.
+            </div>
+
+        </div>
+
+        <div class="photo-caption" id="photoCaption">
+            A little memory, a lot of happiness ♡
+        </div>
+
+        <div class="button-row">
+
+            <button class="secondary-btn" onclick="previousPhoto()">
+                ← Previous
+            </button>
+
+            <button class="primary-btn" onclick="nextPhoto()">
+                Next Memory →
+            </button>
+
+        </div>
+
+        <div class="button-row">
+
+            <button class="secondary-btn" onclick="toggleSlideshow()" id="slideshowButton">
+                ▶ Auto Slideshow
+            </button>
+
+            <button class="secondary-btn" onclick="goToPage(4)">
+                One Last Surprise ✨
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PAGE 4: FINAL BIRTHDAY SURPRISE
+================================== -->
+
+<section class="page" id="page4">
+
+    <canvas class="fireworks" id="fireworks"></canvas>
+
+    <div class="card final-card">
+
+        <div class="small-label">
+            One last little wish
+        </div>
+
+        <div class="final-heart">💗</div>
+
+        <h1>Keep Shining!</h1>
+
+        <h2 style="margin-top:10px;">
+            Happy Birthday Sri Sakhi Ji ♡
+        </h2>
+
+        <p class="final-message">
+            May your life always be filled with beautiful moments,
+            endless laughter, wonderful surprises, and dreams that come true.
+        </p>
+
+        <p class="final-message">
+            May you always find reasons to smile, strength to follow your dreams,
+            and people who make your heart feel happy.
+        </p>
+
+        <p class="final-message">
+            No matter where life takes you, never stop shining.
+            The world is a little more beautiful with you in it.
+        </p>
+
+        <div style="font-size:38px; margin:18px 0;">
+            🎂 🌸 🎁 ✨
+        </div>
+
+        <div class="final-sign">
+            With lots of love ♡
+        </div>
+
+        <button class="primary-btn wish-button" onclick="makeWish()">
+            ✨ Make a Birthday Wish
+        </button>
+
+        <div class="secret-wish" id="secretWish">
+            May every beautiful wish in your heart find its way to you.
+            You deserve a universe full of happiness! ❤️
+        </div>
+
+        <div class="button-row">
+
+            <button class="secondary-btn" onclick="restartWebsite()">
+                Relive the Surprise ↻
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ==================================
+   GENERAL PAGE NAVIGATION
+================================== */
+
+let currentPage = 1;
+
+function goToPage(number) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    const selectedPage = document.getElementById('page' + number);
+
+    selectedPage.classList.add('active');
+    selectedPage.scrollTop = 0;
+
+    currentPage = number;
+
+    if (number === 2) {
+        startFlowers();
+        startLetterScroll();
+    } else {
+        stopLetterScroll();
+    }
+
+    if (number === 3) {
+        stopSlideshow();
+        showPhoto(currentPhoto);
+    }
+
+    if (number === 4) {
+        startFireworks();
+        startFloatingHearts();
+    }
+
+}
+
+
+/* ==================================
+   TEDDY ENTRANCE
+================================== */
+
+window.addEventListener('load', () => {
+
+    const teddy = document.getElementById('teddy');
+
+    teddy.style.animation = 'none';
+
+    void teddy.offsetWidth;
+
+    teddy.style.animation =
+        'teddyWalk 3.2s cubic-bezier(.2,.7,.2,1) forwards';
+
+});
+
+
+/* ==================================
+   CAKE INTERACTIONS
+================================== */
+
+let candlesBlown = false;
+let cakeCut = false;
+
+function blowCandles() {
+
+    candlesBlown = true;
+
+    document.getElementById('cake').textContent = '🎂';
+
+    document.getElementById('candleMessage').textContent =
+        'Your wish is travelling to the universe! ✨';
+
+    checkCake();
+
+}
+
+function cutCake() {
+
+    cakeCut = true;
+
+    document.getElementById('cake').textContent = '🍰';
+
+    document.getElementById('candleMessage').textContent =
+        'Yayyy! Time for some birthday cake! 💗';
+
+    checkCake();
+
+}
+
+function checkCake() {
+
+    if (candlesBlown && cakeCut) {
+
+        document.getElementById('page1Next').style.display = 'block';
+
+        document.getElementById('candleMessage').textContent =
+            'Your birthday surprise is ready! ❤️';
+
+    }
+
+}
+
+
+/* ==================================
+   MUSIC CONTROL
+================================== */
+
+const music = document.getElementById('birthdayMusic');
+const musicButton = document.getElementById('musicButton');
+
+async function toggleMusic() {
+
+    if (music.paused) {
+
+        try {
+
+            await music.play();
+
+            musicButton.textContent = '♫ Pause Music';
+
+        } catch (error) {
+
+            musicButton.textContent = 'Tap to Play Music';
+
+        }
+
+    } else {
+
+        music.pause();
+
+        musicButton.textContent = '♫ Play Music';
+
+    }
+
+}
+
+
+/* ==================================
+   FALLING FLOWERS
+================================== */
+
+let flowerInterval = null;
+
+function createFlower() {
+
+    const flower = document.createElement('div');
+
+    flower.className = 'falling-item';
+
+    const choices = ['🌸', '🌷', '🌺', '🌼', '💗', '✿'];
+
+    flower.textContent =
+        choices[Math.floor(Math.random() * choices.length)];
+
+    flower.style.left = Math.random() * 100 + 'vw';
+
+    flower.style.fontSize =
+        (14 + Math.random() * 17) + 'px';
+
+    flower.style.animationDuration =
+        (6 + Math.random() * 5) + 's';
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 12000);
+
+}
+
+function startFlowers() {
+
+    if (flowerInterval) return;
+
+    flowerInterval = setInterval(createFlower, 550);
+
+}
+
+
+/* ==================================
+   LETTER AUTO SCROLL - FIXED
+================================== */
+
+const letter = document.getElementById('letterScroll');
+
+let letterFrame = null;
+let lastLetterTime = null;
+let letterPaused = false;
+let manualScrollTimer = null;
+let userIsScrolling = false;
+
+const LETTER_SPEED = 13; // pixels per second
+
+function letterAnimation(time) {
+
+    if (currentPage !== 2) {
+        stopLetterScroll();
+        return;
+    }
+
+    if (lastLetterTime === null) {
+        lastLetterTime = time;
+    }
+
+    const elapsed = Math.min(time - lastLetterTime, 50);
+
+    lastLetterTime = time;
+
+    if (!letterPaused && !userIsScrolling) {
+
+        letter.scrollTop += LETTER_SPEED * elapsed / 1000;
+
+    }
+
+    checkMagicMoment();
+
+    const atBottom =
+        letter.scrollTop + letter.clientHeight >= letter.scrollHeight - 2;
+
+    if (atBottom) {
+
+        document.getElementById('scrollHint').textContent =
+            'The end of a little letter, but not the end of our memories ♡';
+
+        stopLetterScroll();
+        return;
+
+    }
+
+    letterFrame = requestAnimationFrame(letterAnimation);
+
+}
+
+function startLetterScroll() {
+
+    stopLetterScroll();
+
+    letterPaused = false;
+    userIsScrolling = false;
+    lastLetterTime = null;
+
+    letter.scrollTop = 0;
+
+    document.getElementById('scrollHint').textContent =
+        'A little letter... take your time ♡';
+
+    letterFrame = requestAnimationFrame(letterAnimation);
+
+}
+
+function stopLetterScroll() {
+
+    if (letterFrame !== null) {
+
+        cancelAnimationFrame(letterFrame);
+        letterFrame = null;
+
+    }
+
+    lastLetterTime = null;
+
+}
+
+function resumeLetterScroll() {
+
+    if (currentPage !== 2 || letterPaused || letterFrame !== null) {
+        return;
+    }
+
+    lastLetterTime = null;
+
+    letterFrame = requestAnimationFrame(letterAnimation);
+
+}
+
+function toggleLetterScroll() {
+
+    letterPaused = !letterPaused;
+
+    if (letterPaused) {
+
+        document.getElementById('scrollHint').textContent =
+            'Paused — enjoy reading at your own pace ♡';
+
+    } else {
+
+        document.getElementById('scrollHint').textContent =
+            'The letter is gently scrolling again ♡';
+
+        resumeLetterScroll();
+
+    }
+
+}
+
+/* When the visitor touches or scrolls manually,
+   pause the automatic movement temporarily. */
+
+function pauseForManualReading() {
+
+    userIsScrolling = true;
+
+    clearTimeout(manualScrollTimer);
+
+    manualScrollTimer = setTimeout(() => {
+
+        userIsScrolling = false;
+
+    }, 3500);
+
+    checkMagicMoment();
+
+}
+
+letter.addEventListener('touchstart', pauseForManualReading, {passive:true});
+
+letter.addEventListener('touchmove', pauseForManualReading, {passive:true});
+
+letter.addEventListener('wheel', pauseForManualReading, {passive:true});
+
+letter.addEventListener('pointerdown', pauseForManualReading);
+
+letter.addEventListener('scroll', checkMagicMoment, {passive:true});
+
+
+/* ==================================
+   11:11 MAGIC ANIMATION
+================================== */
+
+let magicRevealed = false;
+
+function checkMagicMoment() {
+
+    if (magicRevealed) return;
+
+    const magic = document.getElementById('magicMoment');
+
+    const letterRect = letter.getBoundingClientRect();
+    const magicRect = magic.getBoundingClientRect();
+
+    const visible =
+        magicRect.top < letterRect.bottom - 35 &&
+        magicRect.bottom > letterRect.top + 35;
+
+    if (visible) {
+
+        magicRevealed = true;
+
+        magic.classList.add('revealed');
+
+        createMagicSparkles();
+
+    }
+
+}
+
+function createMagicSparkles() {
+
+    const magic = document.getElementById('magicMoment');
+
+    const symbols = ['✧', '✨', '♡', '⋆'];
+
+    for (let i = 0; i < 14; i++) {
+
+        const star = document.createElement('span');
+
+        star.className = 'magic-star';
+
+        star.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        star.style.left = Math.random() * 94 + '%';
+        star.style.top = Math.random() * 88 + '%';
+
+        star.style.fontSize =
+            (12 + Math.random() * 15) + 'px';
+
+        star.style.animationDelay =
+            Math.random() + 's';
+
+        magic.appendChild(star);
+
+    }
+
+}
+
+
+/* ==================================
+   PHOTO MAGAZINE - ROOT FOLDER
+================================== */
+
+let currentPhoto = 1;
+const totalPhotos = 20;
+
+let slideshowInterval = null;
+
+const photoCaptions = [
+
+    'A little memory, a lot of happiness ♡',
+    'Some moments deserve to last forever 🌸',
+    'A beautiful memory to cherish ✨',
+    'Smiles make everything brighter 💗',
+    'Every picture tells a little story',
+    'A moment worth remembering ♡',
+    'Collecting happiness, one memory at a time',
+    'Some memories never fade 🌷',
+    'A little piece of happiness',
+    'Beautiful moments, beautiful memories',
+    'A smile that makes the day brighter',
+    'Life is beautiful with memories like these',
+    'A moment frozen in time ✨',
+    'The little things become the biggest memories',
+    'A memory to keep close to the heart',
+    'A beautiful chapter of life ♡',
+    'Happiness looks beautiful on you',
+    'More smiles, more memories, more magic',
+    'Some moments are simply priceless',
+    'And many more beautiful memories to come ❤️'
+
+];
+
+const galleryPhoto = document.getElementById('galleryPhoto');
+const photoError = document.getElementById('photoError');
+
+function showPhoto(number) {
+
+    currentPhoto = number;
+
+    galleryPhoto.classList.add('changing');
+
+    photoError.style.display = 'none';
+
+    const imagePath = 'photo' + number + '.jpg';
+
+    const newImage = new Image();
+
+    newImage.onload = function() {
+
+        galleryPhoto.src = imagePath;
+
+        galleryPhoto.alt = 'Birthday memory ' + number;
+
+        galleryPhoto.classList.remove('changing');
+
+    };
+
+    newImage.onerror = function() {
+
+        galleryPhoto.classList.remove('changing');
+
+        photoError.style.display = 'block';
+
+        photoError.textContent =
+            'Could not find ' + imagePath +
+            '. Check that the filename and extension are correct.';
+
+    };
+
+    newImage.src = imagePath;
+
+    document.getElementById('photoCounter').textContent =
+        'Memory ' + number + ' of ' + totalPhotos;
+
+    document.getElementById('photoCaption').textContent =
+        photoCaptions[number - 1];
+
+}
+
+function nextPhoto() {
+
+    if (currentPhoto < totalPhotos) {
+
+        showPhoto(currentPhoto + 1);
+
+    } else {
+
+        stopSlideshow();
+        goToPage(4);
+
+    }
+
+}
+
+function previousPhoto() {
+
+    if (currentPhoto > 1) {
+
+        showPhoto(currentPhoto - 1);
+
+    }
+
+}
+
+function toggleSlideshow() {
+
+    if (slideshowInterval) {
+
+        stopSlideshow();
+
+        return;
+
+    }
+
+    slideshowInterval = setInterval(() => {
+
+        if (currentPage !== 3) {
+
+            stopSlideshow();
+            return;
+
+        }
+
+        nextPhoto();
+
+    }, 4000);
+
+    document.getElementById('slideshowButton').textContent =
+        'Ⅱ Pause Slideshow';
+
+}
+
+function stopSlideshow() {
+
+    if (slideshowInterval) {
+
+        clearInterval(slideshowInterval);
+        slideshowInterval = null;
+
+    }
+
+    const button = document.getElementById('slideshowButton');
+
+    if (button) {
+
+        button.textContent = '▶ Auto Slideshow';
+
+    }
+
+}
+
+
+/* ==================================
+   FINAL PAGE - FIREWORKS
+================================== */
+
+let fireworksStarted = false;
+let fireworksFrame = null;
+
+function startFireworks() {
+
+    if (fireworksStarted) return;
+
+    fireworksStarted = true;
+
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    let lastBurst = 0;
+
+    function resizeCanvas() {
+
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = window.innerWidth * ratio;
+        canvas.height = window.innerHeight * ratio;
+
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    }
+
+    resizeCanvas();
+
+    window.addEventListener('resize', resizeCanvas);
+
+    function createFirework() {
+
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight * .55;
+
+        const colors = [
+            '#ff9dbb',
+            '#ffd78a',
+            '#d4b7f2',
+            '#f5b5ce',
+            '#ffffff'
+        ];
+
+        const color = colors[
+            Math.floor(Math.random() * colors.length)
+        ];
+
+        for (let i = 0; i < 48; i++) {
+
+            const angle = Math.PI * 2 * i / 48;
+            const speed = 1 + Math.random() * 4;
+
+            particles.push({
+
+                x,
+                y,
+
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+
+                alpha: 1,
+                color,
+                size: 1.5 + Math.random() * 2
+
+            });
+
+        }
+
+    }
+
+    function animate(time) {
+
+        if (currentPage !== 4) {
+
+            cancelAnimationFrame(fireworksFrame);
+            return;
+
+        }
+
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        if (time - lastBurst > 850) {
+
+            createFirework();
+            lastBurst = time;
+
+        }
+
+        particles.forEach(p => {
+
+            p.x += p.vx;
+            p.y += p.vy;
+
+            p.vy += .025;
+            p.alpha -= .012;
+
+            ctx.globalAlpha = Math.max(0, p.alpha);
+            ctx.fillStyle = p.color;
+
+            ctx.beginPath();
+
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+            ctx.fill();
+
+        });
+
+        ctx.globalAlpha = 1;
+
+        particles = particles.filter(p => p.alpha > 0);
+
+        fireworksFrame = requestAnimationFrame(animate);
+
+    }
+
+    animate(0);
+
+}
+
+
+/* ==================================
+   FINAL PAGE - FLOATING HEARTS
+================================== */
+
+let heartInterval = null;
+
+function createFloatingHeart() {
+
+    if (currentPage !== 4) return;
+
+    const heart = document.createElement('div');
+
+    heart.className = 'floating-heart';
+
+    const choices = ['♡', '💗', '💕', '✨'];
+
+    heart.textContent =
+        choices[Math.floor(Math.random() * choices.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+
+    heart.style.fontSize =
+        (15 + Math.random() * 22) + 'px';
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 11000);
+
+}
+
+function startFloatingHearts() {
+
+    if (heartInterval) return;
+
+    heartInterval = setInterval(createFloatingHeart, 700);
+
+}
+
+
+/* ==================================
+   BIRTHDAY WISH INTERACTION
+================================== */
+
+let wishMade = false;
+
+function makeWish() {
+
+    if (wishMade) return;
+
+    wishMade = true;
+
+    document.getElementById('secretWish').classList.add('show');
+
+    document.querySelector('.wish-button').textContent =
+        '♡ Your wish is on its way ♡';
+
+    // A little extra burst of celebration
+    for (let i = 0; i < 18; i++) {
+
+        setTimeout(createFloatingHeart, i * 100);
+
+    }
+
+}
+
+
+/* ==================================
+   RESTART THE EXPERIENCE
+================================== */
+
+function restartWebsite() {
+
+    candlesBlown = false;
+    cakeCut = false;
+    currentPhoto = 1;
+
+    magicRevealed = false;
+    wishMade = false;
+
+    stopSlideshow();
+    stopLetterScroll();
+
+    clearTimeout(manualScrollTimer);
+
+    userIsScrolling = false;
+    letterPaused = false;
+
+    document.getElementById('cake').textContent = '🎂';
+
+    document.getElementById('candleMessage').textContent =
+        'Close your eyes, make a wish, and blow out your candles!';
+
+    document.getElementById('page1Next').style.display = 'none';
+
+    document.getElementById('magicMoment').classList.remove('revealed');
+
+    document.querySelectorAll('.magic-star').forEach(star => star.remove());
+
+    document.getElementById('secretWish').classList.remove('show');
+
+    document.querySelector('.wish-button').textContent =
+        '✨ Make a Birthday Wish';
+
+    letter.scrollTop = 0;
+
+    const teddy = document.getElementById('teddy');
+
+    teddy.style.animation = 'none';
+
+    void teddy.offsetWidth;
+
+    teddy.style.animation =
+        'teddyWalk 3.2s cubic-bezier(.2,.7,.2,1) forwards';
+
+    showPhoto(1);
+
+    goToPage(1);
+
+}
+
+</script>
+
+</body>
+</html>
